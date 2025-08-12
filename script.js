@@ -16,8 +16,9 @@ function divide(arr,t){
     }
         return result 
 }
-const n = Number(prompt("Enter limit: "));
-const arr = prompt("Enter numbers separated by spaces:")
+const n = Number(prompt("Enter limit: ") || 0);
+const arrInput = prompt("Enter numbers separated by spaces:") || "";
+const arr = arrInput
               .trim()
               .split(/\s+/)
               .map(Number);
