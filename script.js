@@ -1,8 +1,25 @@
-const arr = [1, 2, 3, 4, 1, 0, 2, 2];
+function divide(arr,t){
+    let result =[]
+    let j=0
+    let subArr = [];
+    arr.forEach(e => {
+        if(j+e>t){
+            result.push([...subArr])
+            j=0
+            subArr =[]
+        }
+            subArr.push(e)
+            j+=e;
+        });
+ if (subArr.length) {
+        result.push(subArr);
+    }
+        return result 
+}
+const n = Number(prompt("Enter limit: "));
+const arr = prompt("Enter numbers separated by spaces:")
+              .trim()
+              .split(/\s+/)
+              .map(Number);
 
-const divide = (arr, n) => {
-  // Write your code here
-};
-
-const n = prompt("Enter n: ");
 alert(JSON.stringify(divide(arr, n)));
